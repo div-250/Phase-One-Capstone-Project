@@ -1,17 +1,40 @@
 package org.example;
 
-//TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
-// click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
 public class Main {
-    static void main() {
-        //TIP Press <shortcut actionId="ShowIntentionActions"/> with your caret at the highlighted text
-        // to see how IntelliJ IDEA suggests fixing it.
-        IO.println(String.format("Hello and welcome!"));
 
-        for (int i = 1; i <= 5; i++) {
-            //TIP Press <shortcut actionId="Debug"/> to start debugging your code. We have set one <icon src="AllIcons.Debugger.Db_set_breakpoint"/> breakpoint
-            // for you, but you can always add more by pressing <shortcut actionId="ToggleLineBreakpoint"/>.
-            IO.println("i = " + i);
-        }
+    public static void main(String[] args) {
+
+        Student student1 = new Student("Niyitegeka Thierry", "thierry@uni.edu", "22206741");
+        Student student2 = new Student("Abdoul Razak", "razak@uni.edu", "222004356");
+
+        Instructor instructor1 = new Instructor("Vincent Niyigaba", "vincent@uni.edu","mechanical engineering" );
+
+        Course course1 = new Course("CS101", "Introduction to Programming", 30);
+        Course course2 = new Course("CS201", "Data Structures", 45);
+
+        course1.setInstructor(instructor1);
+        course2.setInstructor(instructor1);
+        instructor1.assignCourse("CS101");
+        instructor1.assignCourse("CS201");
+
+
+        student1.enrollCourse("CS101");
+        student1.enrollCourse("CS201");
+        student2.enrollCourse("CS101");
+
+        // Display information
+
+        System.out.println("=== Students ===");
+        System.out.println(student1);
+        System.out.println(student2);
+
+        System.out.println("\n=== Instructor ===");
+        System.out.println(instructor1);
+
+        System.out.println("\n=== Courses ===");
+        System.out.println(course1);
+        System.out.println(course2);
     }
+
+
 }
