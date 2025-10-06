@@ -3,13 +3,13 @@ package org.example;
 import java.util.ArrayList;
 import java.util.List;
 
-public class Student {
+public class Student extends Person {
     private String student_id;
     private List<String> enrolled_courses;
 
 
     public Student(String name, String email, String student_id) {
-        super();
+        super(name,email);
         this.student_id = student_id;
         this.enrolled_courses = new ArrayList<>();
     }

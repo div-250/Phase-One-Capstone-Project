@@ -3,12 +3,12 @@ package org.example;
 import java.util.ArrayList;
 import java.util.List;
 
-public class Instructor {
+public class Instructor extends Person {
     private String department;
     private List<String> teaching_courses;
 
     public Instructor(String name, String email, String department) {
-        super();
+        super(name,email);
         this.department = department;
         this.teaching_courses = new ArrayList<>();
 
