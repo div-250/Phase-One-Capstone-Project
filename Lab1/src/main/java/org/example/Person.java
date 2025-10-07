@@ -1,5 +1,7 @@
 package org.example;
 
+import java.util.List;
+
 public class Person {
     private String name;
     private String email;
@@ -17,5 +19,9 @@ public class Person {
     @Override
     public String toString() {
         return "Name: " + name + ", Email: " + email;
+    }
+
+    public String calculateGPA(List<Course> courseStudentMap) {
+        return "";
     }
 }

@@ -1,17 +1,23 @@
 package org.example;
 
-import java.util.ArrayList;
-import java.util.List;
+import java.util.*;
 
 public class Instructor extends Person {
     private String department;
-    private List<String> teaching_courses;
+    private List<Course> teaching_courses;
+    private Map<Course, Set<Student>> course_roster;
+
 
     public Instructor(String name, String email, String department) {
-        super(name,email);
+        super(name, email);
         this.department = department;
         this.teaching_courses = new ArrayList<>();
+        this.course_roster = new HashMap<>();
 
+
+    }
+    public void setTeachingCourses (Course course){
+        this.teaching_courses.add(course);
     }
 
     public String getDepartment() {
@@ -22,22 +28,29 @@ public class Instructor extends Person {
         this.department = department;
     }
 
-    public List<String> getTeaching_courses() {
+    public List<Course> getTeaching_courses() {
         return teaching_courses;
     }
 
-    public void assignCourse(String courseCode) {
-        teaching_courses.add(courseCode);
+    public Map<Course, Set<Student>> getCourseRoster() {
+        return course_roster;
     }
+
+    public void assignCourse(Course co) {
+        teaching_courses.add(co);
+        course_roster.put(co, co.getEnrolledStudents());
+
+    }
+
 
     @Override
     public String toString() {
-        return super.toString() + ", Department: " + department + ", Teaching Courses: " + teaching_courses;
+        return super.toString() +
+                ", department='" + department +
+                ", assignedCourses=" + teaching_courses.size();
+
+
     }
 
-    public String getName() {
 
-
-        return "";
-    }
 }
